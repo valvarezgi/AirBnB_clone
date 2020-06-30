@@ -53,7 +53,6 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         """test_to_dict - test the return of a dict containing
             all the key/values of __dict__"""
-
         dict_json = self.my_model.to_dict()
         self.assertEqual(type(dict_json), dict)
         self.assertTrue(type(dict_json['created_at']) is str)
