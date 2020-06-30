@@ -25,6 +25,14 @@ class TestBaseModel(unittest.TestCase):
         result = pep8style.check_files(['models/base_model.py'])
         self.assertEqual(result.total_errors, 0)
 
+    def test_docstrings(self):
+        """Test docstrings"""
+        self.assertIsNotNone(BaseModel.__doc__)
+        self.assertIsNotNone(BaseModel.__init__.__doc__)
+        self.assertIsNotNone(BaseModel.__str__.__doc__)
+        self.assertIsNotNone(BaseModel.save.__doc__)
+        self.assertIsNotNone(BaseModel.to_dict.__doc__)
+
     def test_base(self):
         """Test for BaseModel
         """
