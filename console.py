@@ -121,9 +121,7 @@ class HBNBCommand(cmd.Cmd):
                 instance_list.append(str(storage.all()[key]))
             elif not args:
                 instance_list.append(str(storage.all()[key]))
-        if len(instance_list) == 0:
-                pass
-        else:print(instance_list)
+        print(instance_list)
         return
 
     def do_update(self, args):
