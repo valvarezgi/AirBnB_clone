@@ -8,6 +8,8 @@ import models
 
 
 class BaseModel:
+    """Class Base
+    """
     def __init__(self, *args, **kwargs):
         """init - constructor"""
         if kwargs:
