@@ -12,12 +12,15 @@ class TestBaseModel(unittest.TestCase):
     """
 
     def setUp(self):
+        """ setUp init for tests"""
         self.my_model = BaseModel()
         self.my_model2 = BaseModel()
         self.my_model.name = "Vale"
         self.my_model.age = 28
 
     def test_base(self):
+        """Test for base
+        """
         self.assertIsInstance(self.my_model, BaseModel)
         self.assertEqual(self.my_model.name, "Vale")
         self.assertEqual(self.my_model.age, 28)
