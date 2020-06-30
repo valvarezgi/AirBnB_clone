@@ -123,8 +123,7 @@ class HBNBCommand(cmd.Cmd):
                 instance_list.append(str(storage.all()[key]))
         if len(instance_list) == 0:
                 pass
-        else:
-                print(instance_list)
+        else:print(instance_list)
         return
 
     def do_update(self, args):
@@ -134,14 +133,14 @@ class HBNBCommand(cmd.Cmd):
         array = shlex.split(args)
         if len(array) == 0:
             print("** class name missing **")
+        elif array[0] not in classes:
+            print("** class doesn't exist **")
         elif len(array) == 1:
             print("** instance id missing **")
         elif len(array) == 2:
             print("** attribute name missing **")
         elif len(array) == 3:
             print("** value missing **")
-        elif array[0] not in classes:
-            print("** class doesn't exist **")
         else:
             key_to_find = array[0] + "." + array[1]
             name_attr = array[2]
