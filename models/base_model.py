@@ -27,7 +27,7 @@ class BaseModel:
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
-            self.updated_at = self.created_at
+            self.updated_at = datetime.now()
             models.storage.new(self)
 
     def __str__(self):
@@ -42,7 +42,21 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """to_dict -  returns a dictionary containing all keys/values
+        """to_dict -  returns a dictionary contai
+Update your command interpreter (console.py) to destroy an instance based on his ID: <class name>.destroy(<id>).
+
+Errors management must be the same as previously.
+
+guillaume@ubuntu:~/AirBnB$ ./console.py
+(hbnb) User.count()
+2
+(hbnb) User.destroy("246c227a-d5c1-403d-9bc7-6a47bb9f0f68")
+(hbnb) User.count()
+1
+(hbnb) User.destroy("Holberton")
+** no instance found **
+(hbnb) 
+No unittests neededning all keys/values
         of __dict__ of the instance"""
         my_dict = self.__dict__.copy()
         my_dict['__class__'] = self.__class__.__name__
