@@ -4,6 +4,7 @@
 
 
 import unittest
+import pep8
 from models.base_model import BaseModel
 
 
@@ -17,6 +18,12 @@ class TestBaseModel(unittest.TestCase):
         self.my_model2 = BaseModel()
         self.my_model.name = "Vale"
         self.my_model.age = 28
+
+    def test_pep8_conformance_BaseModel(self):
+        """Test that we conform to PEP8."""
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/base_model.py'])
+        self.assertEqual(result.total_errors, 0)
 
     def test_base(self):
         """Test for BaseModel
@@ -68,6 +75,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(self.my_model.id, my_model2.id)
         self.assertEqual(self.my_model.created_at, my_model2.created_at)
         self.assertEqual(self.my_model.updated_at, my_model2.updated_at)
+
 
 if __name__ == '__main__':
     unittest.main()
