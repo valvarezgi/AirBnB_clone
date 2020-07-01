@@ -54,6 +54,12 @@ class TestFileStorage(unittest.TestCase):
         key = 'BaseModel.{}'.format(self.my_model.id)
         self.assertIn(key, self.storaged.all())
 
+    def test_attr(self):
+        """Test for attributes
+        """
+        self.assertTrue(isinstance(storage._FileStorage__objects, dict))
+        self.assertTrue(isinstance(storage._FileStorage__file_path, str))
+
     def test_save_method(self):
         """Test for save method
         """
