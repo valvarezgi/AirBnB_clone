@@ -17,6 +17,8 @@ class TestUser(unittest.TestCase):
         self.my_model2 = User()
         self.my_model.name = "Vale"
         self.my_model.age = 28
+        self.my_model.save()
+        self.my_model2.save()
 
     def test_pep8_conformance_User(self):
         """Test that we conform to PEP8."""

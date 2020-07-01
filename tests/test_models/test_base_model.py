@@ -18,6 +18,8 @@ class TestBaseModel(unittest.TestCase):
         self.my_model2 = BaseModel()
         self.my_model.name = "Vale"
         self.my_model.age = 28
+        self.my_model.save()
+        self.my_model2.save()
 
     def test_pep8_conformance_BaseModel(self):
         """Test that we conform to PEP8."""
@@ -53,7 +55,6 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         """test_to_dict - test the return of a dict containing
             all the key/values of __dict__"""
-
         dict_json = self.my_model.to_dict()
         self.assertEqual(type(dict_json), dict)
         self.assertTrue(type(dict_json['created_at']) is str)
