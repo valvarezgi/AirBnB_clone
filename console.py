@@ -154,6 +154,17 @@ class HBNBCommand(cmd.Cmd):
             setattr(storage.all()[key_to_find], name_attr, value)
 
             storage.all()[key_to_find].save()
+    
+    def default(self, args):
+        split_args = args.split(".")
+        
+        if len(split_args) < 2 or len(split_args) > 3:
+            print("*** Unknown syntax: {}".format(args))
+            return
+
+        if split_args[1] == "all()":
+            self.do_all(split_args[0])
+            return
 
 
 if __name__ == '__main__':
