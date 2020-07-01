@@ -175,6 +175,10 @@ class HBNBCommand(cmd.Cmd):
                 print(passcounter)
                 return
 
+        if split_args[1].split("(")[0] == "show":
+            id_is = split_args[1].split("(")[1].split(")")[0]
+            self.do_show(split_args[0] + " " + id_is)
+            
 
 
 if __name__ == '__main__':
